@@ -1,3 +1,7 @@
+project/
+build/
+bin/
+
 # Prerequisites
 *.d
 
