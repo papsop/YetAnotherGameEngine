@@ -1,9 +1,12 @@
-#include <Engine/Engine.h>
+#include <FlappyBird/GameDefinition.h>
+#include <Engine/Application.h>
 
 int main()
 {
+  Engine::Application app;
 
-	Engine::Test::Run();
+  app.RegisterGame(FlappyBird::GameDefinition());
+  app.Run();
 
-	return 0;
+  return 0;
 }
