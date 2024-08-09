@@ -1,11 +1,12 @@
 #include <Engine/Application.h>
+
 #include <raylib/src/raylib.h>
 
 namespace Engine
 {
 
   // =================================================
-  void Application::RegisterGame(const IGameDefinition& gameDef)
+  void Application::RegisterGame(const I_GameDefinition& gameDef)
   {
     // todo
   }
@@ -13,6 +14,7 @@ namespace Engine
   // =================================================
   void Application::Run()
   {
+
     InitWindow(800, 450, "raylib [core] example - basic window");
 
     while (!WindowShouldClose())

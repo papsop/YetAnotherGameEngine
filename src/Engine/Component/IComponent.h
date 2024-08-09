@@ -2,7 +2,7 @@
 
 namespace Engine
 {
-  struct I_GameDefinition
+  class I_Component
   {
 
   };

@@ -6,7 +6,7 @@ namespace Engine
   class Application
   {
   public:
-    void RegisterGame(const IGameDefinition& gameDef);
+    void RegisterGame(const I_GameDefinition& gameDef);
 
     void Run();
   };

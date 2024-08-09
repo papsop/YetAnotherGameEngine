@@ -3,7 +3,7 @@
 
 namespace FlappyBird
 {
-  struct GameDefinition : public Engine::IGameDefinition
+  struct C_GameDefinition : public Engine::I_GameDefinition
   {
   
   };
