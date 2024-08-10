@@ -15,11 +15,6 @@ project "Engine"
         "../libs/",
     }
 
-    vpaths { 
-        ["Headers/"] = { "**.h", "**.inl" },
-        ["Sources/"] = { "**.c", "**.cpp"},
-    }
-
     filter "action:vs*"
         defines{"_WINSOCK_DEPRECATED_NO_WARNINGS", "_CRT_SECURE_NO_WARNINGS"}
         dependson {"raylib"}

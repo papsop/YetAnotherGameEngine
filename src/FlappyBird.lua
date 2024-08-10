@@ -15,11 +15,6 @@ project "FlappyBird"
         "../libs/"
     }
 
-    vpaths { 
-        ["Headers/"] = { "**.h", "**.inl" },
-        ["Sources/"] = { "**.c", "**.cpp"},
-    }
-
     links { "Engine" }
 
     files { flappyBirdPath .. "/**.cpp", flappyBirdPath .. "/**.h", flappyBirdPath .. "/**.inl"}

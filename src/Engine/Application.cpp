@@ -1,9 +1,22 @@
 #include <Engine/Application.h>
+#include <Engine/ECS/Entity/EntityManager.h>
 
 #include <raylib/src/raylib.h>
 
 namespace Engine
 {
+
+  Application::Application()
+  {
+    m_EntityManager = std::make_unique<C_EntityManager>();
+  }
+
+  Application::~Application()
+  {
+    /* empty and must be here, the unique_ptr's destructor is unknown if THIS destructor is in the header file
+    * - https://stackoverflow.com/a/34073093/1953344
+    */
+  }
 
   // =================================================
   void Application::RegisterGame(const I_GameDefinition& gameDef)
