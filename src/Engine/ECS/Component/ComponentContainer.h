@@ -16,23 +16,25 @@ public:
 };
 
 // =====================================================
-template<typename _ComponentType>
+template<typename T>
 class C_ComponentContainer : public I_ComponentContainer
 {
 public:
+  using T_Index = uint32_t;
+
   virtual ~C_ComponentContainer() override = default;
   virtual void EntityDestroyed(T_Entity entity) override;
 
-  void InsertData();
-  void RemoveData();
-  _ComponentType& GetDataRef();
+  void InsertData(T_Entity entity, T data);
+  void RemoveData(T_Entity entity);
+  T& GetData(T_Entity entity);
 
 private:
-  std::array<_ComponentType, MAX_ENTITIES> m_ComponentsArray;
-  std::unordered_map<T_Entity, uint32_t> m_EntityToIndexMap;
-  std::unordered_map<uint32_t, T_Entity> m_IndexToEntityMap;
+  std::array<T, MAX_ENTITIES> m_ComponentsArray;
+  std::unordered_map<T_Entity, T_Index> m_EntityToIndexMap;
+  std::unordered_map<T_Index, T_Entity> m_IndexToEntityMap;
 
-  uint32_t m_ComponentsCount = 0;
+  T_Index m_ComponentsCount = 0;
 };
 
 }
