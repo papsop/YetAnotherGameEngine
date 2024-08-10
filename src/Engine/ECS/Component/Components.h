@@ -4,15 +4,14 @@
 
 #include <raylib/src/raylib.h>
 
-namespace Engine
+namespace Engine{
+
+struct C_Transform
 {
+  Vector3 Position;
+  Quaternion Rotation;
+  Vector3 Scale;
+};
+// =====================================================
 
-  struct C_Transform
-  {
-    Vector3 Position;
-    Quaternion Rotation;
-    Vector3 Scale;
-  };
-
-  // =====================================================
 }

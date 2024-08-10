@@ -1,9 +1,10 @@
 #pragma once
 
-namespace Engine
-{
-  struct I_GameDefinition
-  {
+namespace Engine{
 
-  };
+struct I_GameDefinition
+{
+
+};
+
 }

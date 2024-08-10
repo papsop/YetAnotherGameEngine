@@ -3,21 +3,22 @@
 
 #include <memory>
 
-namespace Engine
+namespace Engine {
+
+class C_EntityManager;
+
+class Application
 {
-  class C_EntityManager;
+public:
+  Application();
+  ~Application();
 
-  class Application
-  {
-  public:
-    Application();
-    ~Application();
+  void RegisterGame(const I_GameDefinition& gameDef);
 
-    void RegisterGame(const I_GameDefinition& gameDef);
+  void Run();
 
-    void Run();
+private:
+  std::unique_ptr<C_EntityManager> m_EntityManager;
+};
 
-  private:
-    std::unique_ptr<C_EntityManager> m_EntityManager;
-  };
 }
