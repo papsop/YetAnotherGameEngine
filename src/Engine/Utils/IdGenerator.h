@@ -6,12 +6,14 @@ namespace Engine {
 template<typename...>
 struct C_IdGenerator
 {
-  template<typename T, typename = std::enable_if_t<std::is_integral_v<T>>>
-  static T GetId()
+  template<typename T>
+  static uint32_t GetId()
   {
-    static T nextId = 0;
-    return nextId++;
+    static uint32_t Id = m_NextId++;
+    return Id;
   }
+
+  static inline uint32_t m_NextId = 0;
 };
 
 }

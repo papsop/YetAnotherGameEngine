@@ -15,11 +15,24 @@ public:
   C_ComponentManager();
   ~C_ComponentManager() = default;
 
+  template<typename T>
   void RegisterComponent();
-  void DestroyEntity(T_Entity entity);
+
+  template<typename T>
+  void AddComponent(T_Entity entity, T component);
+
+  template<typename T>
+  void RemoveComponent(T_Entity entity);
+
+  template<typename T>
+  T& GetComponent(T_Entity entity);
+
+  void EntityDestroyed(T_Entity entity);
 
 private:
-  std::unordered_map<T_ComponentId, std::unique_ptr<I_ComponentContainer>> m_Components;
+  std::unordered_map<uint32_t, std::unique_ptr<I_ComponentContainer>> m_ComponentContainers;
 };
 
 }
+
+#include <Engine/ECS/Component/ComponentManager.inl>

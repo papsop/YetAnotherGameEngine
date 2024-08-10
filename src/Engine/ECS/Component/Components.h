@@ -6,7 +6,7 @@
 
 namespace Engine{
 
-struct C_Transform
+struct S_Transform
 {
   Vector3 Position;
   Quaternion Rotation;
