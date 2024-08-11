@@ -17,11 +17,4 @@ project "FlappyBird"
 
     links { "Engine" }
 
-    filter "configurations:Debug"
-        defines { "DEBUG" }
-
-    filter "configurations:Release"
-        defines { "RELEASE" }
-        optimize "On"
-
     files { flappyBirdPath .. "/**.cpp", flappyBirdPath .. "/**.h", flappyBirdPath .. "/**.inl"}

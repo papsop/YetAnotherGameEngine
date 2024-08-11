@@ -27,11 +27,4 @@ project "Engine"
         links {"winmm", "gdi32"}
         libdirs {"../build/bin/%{cfg.buildcfg}"}
 
-    filter "configurations:Debug"
-        defines { "DEBUG" }
-
-    filter "configurations:Release"
-        defines { "RELEASE" }
-        optimize "On"
-
     files { enginePath .. "/**.cpp", enginePath .. "/**.h", enginePath .. "/**.inl"}
