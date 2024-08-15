@@ -2,9 +2,10 @@
 
 #include <Engine/Application.h>
 
+#include <spdlog/spdlog.h>
+
 int main()
 {
-
   Engine::Application app;
 
   app.RegisterGame(FlappyBird::C_GameDefinition());

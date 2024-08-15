@@ -13,6 +13,7 @@ project "Engine"
     {
         "../src",
         "../libs/",
+        "../libs/spdlog/include/",
     }
 
     filter "action:vs*"
@@ -23,7 +24,7 @@ project "Engine"
         buildoptions { "/Zc:__cplusplus" }
 
     filter "system:windows"
-        defines{"_WIN32"}
+        defines{"_WIN32", "SPDLOG_ACTIVE_LEVEL=SPDLOG_LEVEL_TRACE"}
         links {"winmm", "gdi32"}
         libdirs {"../build/bin/%{cfg.buildcfg}"}
 

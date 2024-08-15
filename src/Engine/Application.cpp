@@ -1,5 +1,8 @@
 #include <Engine/Application.h>
 #include <Engine/ECS/Entity/EntityManager.h>
+#include <Engine/ECS/Component/ComponentManager.h>
+
+#include <Engine/ECS/Component/Components.h>
 
 #include <raylib/src/raylib.h>
 
@@ -8,6 +11,9 @@ namespace Engine {
 Application::Application()
 {
   m_EntityManager = std::make_unique<C_EntityManager>();
+  m_ComponentManager = std::make_unique<C_ComponentManager>();
+
+  InitLogger();
 }
 
 Application::~Application()
@@ -15,6 +21,12 @@ Application::~Application()
   /* empty and must be here, the unique_ptr's destructor is unknown if THIS destructor is in the header file
   * - https://stackoverflow.com/a/34073093/1953344
   */
+}
+
+// =================================================
+void Application::InitLogger()
+{
+
 }
 
 // =================================================
@@ -39,5 +51,4 @@ void Application::Run()
 
   CloseWindow();
 }
-
 }

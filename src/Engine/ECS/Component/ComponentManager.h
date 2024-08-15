@@ -27,9 +27,15 @@ public:
   template<typename T>
   T& GetComponent(T_Entity entity);
 
+  template<typename T>
+  uint32_t GetComponentId();
+
   void EntityDestroyed(T_Entity entity);
 
 private:
+  template<typename T>
+  C_ComponentContainer<T>* GetComponentContainer();
+
   std::unordered_map<uint32_t, std::unique_ptr<I_ComponentContainer>> m_ComponentContainers;
 };
 

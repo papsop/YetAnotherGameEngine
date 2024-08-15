@@ -12,9 +12,13 @@ project "FlappyBird"
     includedirs
     {
         "../src",
-        "../libs/"
+        "../libs/",
+        "../libs/spdlog/include/",
     }
 
     links { "Engine" }
+
+    filter "system:windows"
+        defines{"_WIN32", "SPDLOG_ACTIVE_LEVEL=SPDLOG_LEVEL_TRACE"}
 
     files { flappyBirdPath .. "/**.cpp", flappyBirdPath .. "/**.h", flappyBirdPath .. "/**.inl"}

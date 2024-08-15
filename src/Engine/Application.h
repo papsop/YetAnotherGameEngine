@@ -6,6 +6,7 @@
 namespace Engine {
 
 class C_EntityManager;
+class C_ComponentManager;
 
 class Application
 {
@@ -18,7 +19,10 @@ public:
   void Run();
 
 private:
+  void InitLogger();
+
   std::unique_ptr<C_EntityManager> m_EntityManager;
+  std::unique_ptr<C_ComponentManager> m_ComponentManager;
 };
 
 }

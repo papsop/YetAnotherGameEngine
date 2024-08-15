@@ -1,14 +1,16 @@
 #include <Engine/ECS/Component/ComponentManager.h>
 
+#include <spdlog/spdlog.h>
+
 namespace Engine {
 
-Engine::C_ComponentManager::C_ComponentManager()
+C_ComponentManager::C_ComponentManager()
 {
-
+  
 }
 
 // =================================================
-void Engine::C_ComponentManager::EntityDestroyed(T_Entity entity)
+void C_ComponentManager::EntityDestroyed(T_Entity entity)
 {
 
 }
