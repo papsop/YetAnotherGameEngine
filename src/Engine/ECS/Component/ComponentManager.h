@@ -28,7 +28,7 @@ public:
   T& GetComponent(T_Entity entity);
 
   template<typename T>
-  uint32_t GetComponentId();
+  T_ComponentId GetComponentId();
 
   void EntityDestroyed(T_Entity entity);
 

@@ -10,8 +10,7 @@ namespace Engine {
 
 Application::Application()
 {
-  m_EntityManager = std::make_unique<C_EntityManager>();
-  m_ComponentManager = std::make_unique<C_ComponentManager>();
+  m_ECSCoordinator = std::make_unique<C_ECSCoordinator>();
 
   InitLogger();
 }
@@ -33,6 +32,11 @@ void Application::InitLogger()
 void Application::RegisterGame(const I_GameDefinition& gameDef)
 {
   // todo
+}
+
+C_ECSCoordinator* Application::GetECSCoordinator()
+{
+  return m_ECSCoordinator.get();
 }
 
 // =================================================

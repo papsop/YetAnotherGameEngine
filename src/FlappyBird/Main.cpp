@@ -2,7 +2,7 @@
 
 #include <Engine/Application.h>
 
-#include <spdlog/spdlog.h>
+// todo use https://github.com/RobLoach/raylib-cpp
 
 int main()
 {
